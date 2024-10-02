@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Meeting Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="left">
+          <img src="./MCGIMM.png" alt="WCC Logo" width="70px" />
+          <h1>Calgary Chorale Attendance Form</h1>
+        </div>
+        <div class="right" id="datetime"></div>
+      </header>
+    <div class="form-container">
+        <!-- <h2>Calgary Chorale Attendance Monitoring</h2> -->
+        <form id="myForm" action="https://script.google.com/macros/s/AKfycbwWZEE3sPwA1l9Hz_g21CXMAiHugCb-67ifKh0JA0ylJnciC3tiibuyTWIk_gLfCyd2/exec" method="post">
+            <!-- Week Schedule Label -->
+            <label class="week-label">Week Scheduled Dates</label>
+
+            <!-- Dynamic Date Range -->
+            <div id="date-range" class="date-range"></div>
+
+            <!-- User Information Form -->
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required><br>
+
+            <!-- Prayer Meeting Table -->
+            <h3>Prayer Meetings</h3>
+            <table id="prayer-meeting-table">
+                <thead>
+                    <tr>
+                        <th>Prayer Meeting</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tuesday 2:30 pm</td>
+                        <td>
+                            <select id="prayerMeeting" name="prayerMeeting" onchange="updateRowColor(this)">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday 4:30 am</td>
+                        <td>
+                            <select id="prayerMeeting" name="prayerMeeting" onchange="updateRowColor(this)">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday 7:00 pm</td>
+                        <td>
+                            <select id="prayerMeeting" name="prayerMeeting" onchange="updateRowColor(this)">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                        <td>Other</td>
+                        <td><input type="text" id="otherPrayerMeeting" placeholder="Other"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Worship Service Table -->
+            <h3>Worship Services</h3>
+            <table id="worship-service-table">
+                <thead>
+                    <tr>
+                        <th>Worship Service</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Friday 2:30 pm</td>
+                        <td>
+                            <select id="worshipService" name="worshipService" onchange="updateRowColor(this)">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Saturday 10:00 am</td>
+                        <td>
+                            <select id="worshipService" name="worshipService" onchange="updateRowColor(this)">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday 7:00 pm</td>
+                        <td>
+                            <select id="worshipService" name="worshipService" onchange="updateRowColor(this)">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                        <td>Other</td>
+                        <td><input type="text" id="otherworshipService" placeholder="Other"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Thanksgiving Table -->
+            <h3>Thanksgiving</h3>
+            <table id="thanksgiving-table">
+                <thead>
+                    <tr>
+                        <th>Thanksgiving</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Saturday 3:00 pm</td>
+                        <td>
+                            <select id="thanksgiving" name="thanksgiving" onchange="updateRowColor(this)">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <td>Sunday 1:30 pm</td>
+                            <td>
+                                <select id="thanksgiving" name="thanksgiving" onchange="updateRowColor(this)">
+                                    <option value="">Select</option>
+                                    <option value="Dalo">Dalo</option>
+                                    <option value="Distino">Distino</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tr>
+                    <td>Other</td>
+                    <td><input type="text" id="otherthanksgiving" placeholder="Other"></td>
+                </tr>
+                 
+                </tbody>
+            </table>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
