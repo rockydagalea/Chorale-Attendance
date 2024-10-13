@@ -9,14 +9,13 @@
 <body>
     <header>
         <div class="left">
-          <img src="./MCGIMM.png" alt="WCC Logo" width="70px" />
-          <h1>Calgary Chorale Attendance Form</h1>
+            <img src="./MCGIMM.png" alt="WCC Logo" width="70px" />
+            <h1>Calgary Chorale Attendance Form</h1>
         </div>
         <div class="right" id="datetime"></div>
-      </header>
+    </header>
     <div class="form-container">
-        <!-- <h2>Calgary Chorale Attendance Monitoring</h2> -->
-        <form id="myForm" action="https://script.google.com/macros/s/AKfycbwWZEE3sPwA1l9Hz_g21CXMAiHugCb-67ifKh0JA0ylJnciC3tiibuyTWIk_gLfCyd2/exec" method="post">
+        <form id="myForm" action="https://script.google.com/macros/s/AKfycbyDapOK8KsYvn1LdP3GAylxsjx_2LoDClJD2DbSqIhYpFXXV03yGDNQnh_IlAe0WwvM/exec" method="post">
             <!-- Week Schedule Label -->
             <label class="week-label">Week Scheduled Dates</label>
 
@@ -30,8 +29,12 @@
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required><br>
 
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required><br>
+            <label for="location">Locale:</label>
+            <select id="location" name="location" required>
+                <option value=""></option>
+                <option value="South Calgary">South Calgary</option>
+                <option value="North Calgary">North Calgary</option>
+            </select><br>
 
             <!-- Prayer Meeting Table -->
             <h3>Prayer Meetings</h3>
@@ -46,9 +49,9 @@
                     <tr>
                         <td>Tuesday 2:30 pm</td>
                         <td>
-                            <select id="prayerMeeting" name="prayerMeeting" onchange="updateRowColor(this)">
+                            <select id="prayerMeeting1" name="prayerMeeting1">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo</option>
+                                <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
                         </td>
@@ -56,9 +59,9 @@
                     <tr>
                         <td>Wednesday 4:30 am</td>
                         <td>
-                            <select id="prayerMeeting" name="prayerMeeting" onchange="updateRowColor(this)">
+                            <select id="prayerMeeting2" name="prayerMeeting2">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo</option>
+                                <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
                         </td>
@@ -66,15 +69,28 @@
                     <tr>
                         <td>Wednesday 7:00 pm</td>
                         <td>
-                            <select id="prayerMeeting" name="prayerMeeting" onchange="updateRowColor(this)">
+                            <select id="prayerMeeting3" name="prayerMeeting3">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo</option>
+                                <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
                         </td>
                     </tr>
+
+                    <tr>
+                        <td>Thursday 7:00 pm</td>
+                        <td>
+                            <select id="prayerMeeting4" name="prayerMeeting4">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo only</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
                         <td>Other</td>
-                        <td><input type="text" id="otherPrayerMeeting" placeholder="Other"></td>
+                        <td><textarea id="otherPrayerMeeting" name="otherPrayerMeeting" placeholder="If Dalo only is selected please provide reason"></textarea></td>
                     </tr>
                 </tbody>
             </table>
@@ -92,35 +108,48 @@
                     <tr>
                         <td>Friday 2:30 pm</td>
                         <td>
-                            <select id="worshipService" name="worshipService" onchange="updateRowColor(this)">
+                            <select id="worshipService1" name="worshipService1">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo</option>
+                                <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
                         </td>
                     </tr>
+
+                    <tr>
+                        <td>Friday 6:00 pm</td>
+                        <td>
+                            <select id="worshipService2" name="worshipService2">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo only</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+
                     <tr>
                         <td>Saturday 10:00 am</td>
                         <td>
-                            <select id="worshipService" name="worshipService" onchange="updateRowColor(this)">
+                            <select id="worshipService3" name="worshipService3">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo</option>
+                                <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td>Wednesday 7:00 pm</td>
+                        <td>Saturday 1:00 pm</td>
                         <td>
-                            <select id="worshipService" name="worshipService" onchange="updateRowColor(this)">
+                            <select id="worshipService4" name="worshipService4">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo</option>
+                                <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
                         </td>
                     </tr>
+                    <tr>
                         <td>Other</td>
-                        <td><input type="text" id="otherworshipService" placeholder="Other"></td>
+                        <td><textarea id="otherWorshipService" name="otherWorshipService" placeholder="If Dalo only is selected please provide reason"></textarea></td>
                     </tr>
                 </tbody>
             </table>
@@ -136,36 +165,118 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Saturday 3:00 pm</td>
+                        <td>Saturday 3:00 am</td>
                         <td>
-                            <select id="thanksgiving" name="thanksgiving" onchange="updateRowColor(this)">
+                            <select id="thanksgiving1" name="thanksgiving1">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo</option>
+                                <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <tr>
-                            <td>Sunday 1:30 pm</td>
-                            <td>
-                                <select id="thanksgiving" name="thanksgiving" onchange="updateRowColor(this)">
-                                    <option value="">Select</option>
-                                    <option value="Dalo">Dalo</option>
-                                    <option value="Distino">Distino</option>
-                                </select>
-                            </td>
-                        </tr>
+                        <td>Saturday 4:00 pm</td>
+                        <td>
+                            <select id="thanksgiving2" name="thanksgiving2">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo only</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
                     </tr>
-                    <td>Other</td>
-                    <td><input type="text" id="otherthanksgiving" placeholder="Other"></td>
-                </tr>
-                 
+
+                    <tr>
+                        <td>Sunday 1:30 pm</td>
+                        <td>
+                            <select id="thanksgiving3" name="thanksgiving3">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo only</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Other</td>
+                        <td><textarea id="otherThanksgiving" name="otherThanksgiving" placeholder="If Dalo only is selected please provide reason"></textarea></td>
+                    </tr>
                 </tbody>
             </table>
+             <!-- SK Table -->
+             <h3>Serbisyong Kapatiran</h3>
+             <table id="sk-table">
+                 <thead>
+                     <tr>
+                         <th>Serbisyong Kapatiran</th>
+                         <th>Selection</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td>Monday</td>
+                         <td>
+                             <select id="sk1" name="sk1">
+                                 <option value="">Select</option>
+                                 <option value="IG">Instagram</option>
+                                 <option value="TV">MCGI TV</option>
+                                 <option value="Zoom">Zoom</option>
+                             </select>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>Tuesday</td>
+                         <td>
+                            <select id="sk2" name="sk2">
+                                <option value="">Select</option>
+                                <option value="IG">Instagram</option>
+                                <option value="TV">MCGI TV</option>
+                                <option value="Zoom">Zoom</option>
+                            </select>
+                         </td>
+                     </tr>
+ 
+                     <tr>
+                         <td>Wednesday</td>
+                         <td>
+                            <select id="sk3" name="sk3">
+                                <option value="">Select</option>
+                                <option value="IG">Instagram</option>
+                                <option value="TV">MCGI TV</option>
+                                <option value="Zoom">Zoom</option>
+                            </select>
+                         </td>
+                     </tr>
+
+                     <tr>
+                        <td>Thursday</td>
+                        <td>
+                           <select id="sk4" name="sk4">
+                               <option value="">Select</option>
+                               <option value="IG">Instagram</option>
+                               <option value="TV">MCGI TV</option>
+                               <option value="Zoom">Zoom</option>
+                           </select>
+                        </td>
+                    </tr>
+
+                    <tr></tr>
+                        <td>Friday</td>
+                        <td>
+                           <select id="sk5" name="sk5">
+                               <option value="">Select</option>
+                               <option value="IG">Instagram</option>
+                               <option value="TV">MCGI TV</option>
+                               <option value="Zoom">Zoom</option>
+                           </select>
+                        </td>
+                    </tr>
+ 
+                   
+                 </tbody>
+             </table>
 
             <!-- Submit Button -->
-            <button type="submit" id="submitBtn">Submit</button>
+            <button type="submit" id="submitBtn">SUBMIT</button>
         </form>
     </div>
 

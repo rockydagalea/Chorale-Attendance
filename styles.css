@@ -99,10 +99,11 @@ button[type="submit"] {
     border-radius: 5px;
     margin-top: 20px;
     width: 100%;
+    font-weight: bolder;
 }
 
 button[type="submit"]:hover {
-    background-color: #00509e;
+    background-color: #07b515;
 }
 
 /* Table styles */
