@@ -15,7 +15,7 @@
         <div class="right" id="datetime"></div>
     </header>
     <div class="form-container">
-        <form id="myForm" action="https://script.google.com/macros/s/AKfycbyDapOK8KsYvn1LdP3GAylxsjx_2LoDClJD2DbSqIhYpFXXV03yGDNQnh_IlAe0WwvM/exec" method="post">
+        <form id="myForm" action="https://script.google.com/macros/s/AKfycbyraWhFDMsogqxIRvL3LS2E0xYuqqwTYvRvWakauZFN0yeaOoolVBN6sZylVWOJVdjl/exec" method="post">
             <!-- Week Schedule Label -->
             <label class="week-label">Week Scheduled Dates</label>
 
@@ -202,6 +202,57 @@
                     </tr>
                 </tbody>
             </table>
+
+            <!-- Previous code remains the same until the Thanksgiving table -->
+
+            <!-- SPBB Table -->
+            <h3>SPBB</h3>
+            <table id="spbb-table">
+                <thead>
+                    <tr>
+                        <th>SPBB</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Day 1</td>
+                        <td>
+                            <select id="spbb1" name="spbb1">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo only</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Day 2</td>
+                        <td>
+                            <select id="spbb2" name="spbb2">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo only</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Day 3</td>
+                        <td>
+                            <select id="spbb3" name="spbb3">
+                                <option value="">Select</option>
+                                <option value="Dalo">Dalo only</option>
+                                <option value="Distino">Distino</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td><textarea id="otherSPBB" name="otherSPBB" placeholder="If Dalo only is selected please provide reason"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Rest of the form remains the same -->
              <!-- SK Table -->
              <h3>Serbisyong Kapatiran</h3>
              <table id="sk-table">
