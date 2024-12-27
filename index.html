@@ -15,19 +15,15 @@
         <div class="right" id="datetime"></div>
     </header>
     <div class="form-container">
-        <form id="myForm" action="https://script.google.com/macros/s/AKfycbyraWhFDMsogqxIRvL3LS2E0xYuqqwTYvRvWakauZFN0yeaOoolVBN6sZylVWOJVdjl/exec" method="post">
-            <!-- Week Schedule Label -->
+        <form id="myForm" action="https://script.google.com/macros/s/AKfycbyMGlLR_zQQJEBlOm-9qpmjTsTapoOJDkuFg4f8VJ2dEnV_n0TCCGrqjYwPxcI6Pfjb/exec" method="post">
             <label class="week-label">Week Scheduled Dates</label>
-
-            <!-- Dynamic Date Range -->
             <div id="date-range" class="date-range"></div>
 
-            <!-- User Information Form -->
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required><br>
+            <label for="name">Name:</label>
+<input type="text" id="name" name="name" list="nameList" required>
+<datalist id="nameList"></datalist>
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required><br>
+
 
             <label for="location">Locale:</label>
             <select id="location" name="location" required>
@@ -49,48 +45,46 @@
                     <tr>
                         <td>Tuesday 2:30 pm</td>
                         <td>
-                            <select id="prayerMeeting1" name="prayerMeeting1">
+                            <select id="prayerMeeting1" name="prayerMeeting1" onchange="toggleReason(this, 'prayerMeeting1Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="prayerMeeting1Reason" name="prayerMeeting1Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>Wednesday 4:30 am</td>
                         <td>
-                            <select id="prayerMeeting2" name="prayerMeeting2">
+                            <select id="prayerMeeting2" name="prayerMeeting2" onchange="toggleReason(this, 'prayerMeeting2Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="prayerMeeting2Reason" name="prayerMeeting2Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>Wednesday 7:00 pm</td>
                         <td>
-                            <select id="prayerMeeting3" name="prayerMeeting3">
+                            <select id="prayerMeeting3" name="prayerMeeting3" onchange="toggleReason(this, 'prayerMeeting3Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="prayerMeeting3Reason" name="prayerMeeting3Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td>Thursday 7:00 pm</td>
                         <td>
-                            <select id="prayerMeeting4" name="prayerMeeting4">
+                            <select id="prayerMeeting4" name="prayerMeeting4" onchange="toggleReason(this, 'prayerMeeting4Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="prayerMeeting4Reason" name="prayerMeeting4Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td>Other</td>
-                        <td><textarea id="otherPrayerMeeting" name="otherPrayerMeeting" placeholder="If Dalo only is selected please provide reason"></textarea></td>
                     </tr>
                 </tbody>
             </table>
@@ -108,48 +102,46 @@
                     <tr>
                         <td>Friday 2:30 pm</td>
                         <td>
-                            <select id="worshipService1" name="worshipService1">
+                            <select id="worshipService1" name="worshipService1" onchange="toggleReason(this, 'worshipService1Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="worshipService1Reason" name="worshipService1Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td>Friday 6:00 pm</td>
                         <td>
-                            <select id="worshipService2" name="worshipService2">
+                            <select id="worshipService2" name="worshipService2" onchange="toggleReason(this, 'worshipService2Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="worshipService2Reason" name="worshipService2Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td>Saturday 10:00 am</td>
                         <td>
-                            <select id="worshipService3" name="worshipService3">
+                            <select id="worshipService3" name="worshipService3" onchange="toggleReason(this, 'worshipService3Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="worshipService3Reason" name="worshipService3Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>Saturday 1:00 pm</td>
                         <td>
-                            <select id="worshipService4" name="worshipService4">
+                            <select id="worshipService4" name="worshipService4" onchange="toggleReason(this, 'worshipService4Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="worshipService4Reason" name="worshipService4Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>Other</td>
-                        <td><textarea id="otherWorshipService" name="otherWorshipService" placeholder="If Dalo only is selected please provide reason"></textarea></td>
                     </tr>
                 </tbody>
             </table>
@@ -167,166 +159,175 @@
                     <tr>
                         <td>Saturday 3:00 am</td>
                         <td>
-                            <select id="thanksgiving1" name="thanksgiving1">
+                            <select id="thanksgiving1" name="thanksgiving1" onchange="toggleReason(this, 'thanksgiving1Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="thanksgiving1Reason" name="thanksgiving1Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>Saturday 4:00 pm</td>
                         <td>
-                            <select id="thanksgiving2" name="thanksgiving2">
+                            <select id="thanksgiving2" name="thanksgiving2" onchange="toggleReason(this, 'thanksgiving2Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="thanksgiving2Reason" name="thanksgiving2Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
                     </tr>
-
                     <tr>
                         <td>Sunday 1:30 pm</td>
                         <td>
-                            <select id="thanksgiving3" name="thanksgiving3">
+                            <select id="thanksgiving3" name="thanksgiving3" onchange="toggleReason(this, 'thanksgiving3Reason')">
                                 <option value="">Select</option>
                                 <option value="Dalo">Dalo only</option>
                                 <option value="Distino">Distino</option>
                             </select>
+                            <textarea id="thanksgiving3Reason" name="thanksgiving3Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
                         </td>
-                    </tr>
-
-                    <tr>
-                        <td>Other</td>
-                        <td><textarea id="otherThanksgiving" name="otherThanksgiving" placeholder="If Dalo only is selected please provide reason"></textarea></td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- Previous code remains the same until the Thanksgiving table -->
-
-            <!-- SPBB Table -->
-            <!-- <h3>SPBB</h3>
-            <table id="spbb-table">
+            <!-- SK Table -->
+            <h3>Serbisyong Kapatiran</h3>
+            <table id="sk-table">
                 <thead>
                     <tr>
-                        <th>SPBB</th>
+                        <th>Serbisyong Kapatiran</th>
                         <th>Selection</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Day 1</td>
+                        <td>Monday</td>
                         <td>
-                            <select id="spbb1" name="spbb1">
+                            <select id="sk1" name="sk1">
                                 <option value="">Select</option>
-                                <option value="Dalo">Dalo only</option>
-                                <option value="Distino">Distino</option>
+                                <option value="IG">Instagram</option>
+                                <option value="TV">MCGI TV</option>
+                                <option value="Zoom">Zoom</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td>Day 2</td>
+                        <td>Tuesday</td>
                         <td>
-                            <select id="spbb2" name="spbb2">
-                                <option value="">Select</option>
-                                <option value="Dalo">Dalo only</option>
-                                <option value="Distino">Distino</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Day 3</td>
-                        <td>
-                            <select id="spbb3" name="spbb3">
-                                <option value="">Select</option>
-                                <option value="Dalo">Dalo only</option>
-                                <option value="Distino">Distino</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Other</td>
-                        <td><textarea id="otherSPBB" name="otherSPBB" placeholder="If Dalo only is selected please provide reason"></textarea></td>
-                    </tr>
-                </tbody>
-            </table> -->
-
-            <!-- Rest of the form remains the same -->
-             <!-- SK Table -->
-             <h3>Serbisyong Kapatiran</h3>
-             <table id="sk-table">
-                 <thead>
-                     <tr>
-                         <th>Serbisyong Kapatiran</th>
-                         <th>Selection</th>
-                     </tr>
-                 </thead>
-                 <tbody>
-                     <tr>
-                         <td>Monday</td>
-                         <td>
-                             <select id="sk1" name="sk1">
-                                 <option value="">Select</option>
-                                 <option value="IG">Instagram</option>
-                                 <option value="TV">MCGI TV</option>
-                                 <option value="Zoom">Zoom</option>
-                             </select>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>Tuesday</td>
-                         <td>
                             <select id="sk2" name="sk2">
                                 <option value="">Select</option>
                                 <option value="IG">Instagram</option>
                                 <option value="TV">MCGI TV</option>
                                 <option value="Zoom">Zoom</option>
                             </select>
-                         </td>
-                     </tr>
- 
-                     <tr>
-                         <td>Wednesday</td>
-                         <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>
                             <select id="sk3" name="sk3">
                                 <option value="">Select</option>
                                 <option value="IG">Instagram</option>
                                 <option value="TV">MCGI TV</option>
                                 <option value="Zoom">Zoom</option>
                             </select>
-                         </td>
-                     </tr>
-
-                     <tr>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Thursday</td>
                         <td>
-                           <select id="sk4" name="sk4">
-                               <option value="">Select</option>
-                               <option value="IG">Instagram</option>
-                               <option value="TV">MCGI TV</option>
-                               <option value="Zoom">Zoom</option>
-                           </select>
+                            <select id="sk4" name="sk4">
+                                <option value="">Select</option>
+                                <option value="IG">Instagram</option>
+                                <option value="TV">MCGI TV</option>
+                                <option value="Zoom">Zoom</option>
+                            </select>
                         </td>
                     </tr>
-
-                    <tr></tr>
+                    <tr>
                         <td>Friday</td>
                         <td>
-                           <select id="sk5" name="sk5">
-                               <option value="">Select</option>
-                               <option value="IG">Instagram</option>
-                               <option value="TV">MCGI TV</option>
-                               <option value="Zoom">Zoom</option>
-                           </select>
+                            <select id="sk5" name="sk5">
+                                <option value="">Select</option>
+                                <option value="IG">Instagram</option>
+                                <option value="TV">MCGI TV</option>
+                                <option value="Zoom">Zoom</option>
+                            </select>
                         </td>
                     </tr>
- 
-                   
-                 </tbody>
-             </table>
+                </tbody>
+            </table>
 
-            <!-- Submit Button -->
+            <!-- Add this before the submit button -->
+<h3>Special Gathering</h3>
+<table id="special-gathering-table">
+    <thead>
+        <tr>
+            <th>Special Gathering</th>
+            <th>Selection</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SPBB Day 1</td>
+            <td>
+                <select id="spbb1" name="spbb1" onchange="toggleReason(this, 'spbb1Reason')">
+                    <option value="">Select</option>
+                    <option value="Dalo">Dalo only</option>
+                    <option value="Distino">Distino</option>
+                </select>
+                <textarea id="spbb1Reason" name="spbb1Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>SPBB Day 2</td>
+            <td>
+                <select id="spbb2" name="spbb2" onchange="toggleReason(this, 'spbb2Reason')">
+                    <option value="">Select</option>
+                    <option value="Dalo">Dalo only</option>
+                    <option value="Distino">Distino</option>
+                </select>
+                <textarea id="spbb2Reason" name="spbb2Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>SPBB Day 3</td>
+            <td>
+                <select id="spbb3" name="spbb3" onchange="toggleReason(this, 'spbb3Reason')">
+                    <option value="">Select</option>
+                    <option value="Dalo">Dalo only</option>
+                    <option value="Distino">Distino</option>
+                </select>
+                <textarea id="spbb3Reason" name="spbb3Reason" class="reason-textarea" placeholder="Please provide reason"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Christian New Year</td>
+            <td>
+                <select id="christianNewYear" name="christianNewYear" onchange="toggleReason(this, 'christianNewYearReason')">
+                    <option value="">Select</option>
+                    <option value="Dalo">Dalo only</option>
+                    <option value="Distino">Distino</option>
+                </select>
+                <textarea id="christianNewYearReason" name="christianNewYearReason" class="reason-textarea" placeholder="Please provide reason"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Lord's Supper</td>
+            <td>
+                <select id="lordsSupper" name="lordsSupper" onchange="toggleReason(this, 'lordsSupperReason')">
+                    <option value="">Select</option>
+                    <option value="Dalo">Dalo only</option>
+                    <option value="Distino">Distino</option>
+                </select>
+                <textarea id="lordsSupperReason" name="lordsSupperReason" class="reason-textarea" placeholder="Please provide reason"></textarea>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
             <button type="submit" id="submitBtn">SUBMIT</button>
         </form>
     </div>

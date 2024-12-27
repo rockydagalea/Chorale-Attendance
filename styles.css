@@ -23,6 +23,14 @@ header {
     margin-bottom: 20px; /* Space between the header and form */
 }
 
+.reason-textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    display: none;
+}
+
+
 header .left {
     display: flex;
     align-items: center;
